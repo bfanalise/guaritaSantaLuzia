@@ -155,7 +155,7 @@ $total_f = $userdata_f['sum(quantidade)'];
                 <tr>
             <?php echo "<td><p>FIBRILHA CARREGANDO:</p> <br>" ."<div class='valores'>". $dentro_d ." em processo"."</div>"."</td>" ?>
             <?php echo "<td><p>FIBRILHA AGUARDANDO:</p> <br>" ."<div class='valores'>". $dentro_e ." em processo"."</div>"."</td>" ?>
-            <?php echo "<td><p>ROLINHOS TOTAIS:</p> <br>" ."<div class='valores'>". $total_f ." em processo"."</div>"."</td>" ?>  
+            <?php echo "<td><p>ROLINHOS TOTAIS:</p> <br>" ."<div class='valores'>". $total_f ." Rolinhos"."</div>"."</td>" ?>  
                 </tr>
             </table>
             <br><br>
