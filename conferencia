@@ -1,0 +1,26 @@
+    $dataChegada = $_POST['dataCheg'];
+    $horaChegada = $_POST['hora'];
+    $turno = $_POST['turno'];
+    $placa = $_POST['placa'];
+    $motorista = $_POST['motorista'];
+    $eixo = $_POST['eixo'];
+    $transportadora = $_POST['transportadora'];
+    $produto =  $_POST['produto'];
+    $quantidade = $_POST['quantidade'];
+    $peso = $_POST['peso'];
+    $dataEntrada = $_POST['data_entrada'];
+    $horaEntrada = $_POST['hora_entrada'];
+    $dataSaida = $_POST['data_saida'];
+    $horaSaida = $_POST['hora_saida'];
+    $origem = $_POST['origem'];
+    $destino = $_POST['destino'];
+    $nfe = $_POST['nfe'];
+
+    $sqlupdate = "UPDATE cadastro SET dataCheg = '$dataChegada', hora = '$horaChegada', turno = '$turno',
+    placa = '$placa', motorista = '$motorista', eixo = '$eixo' , transportadora = '$transportadora',
+    produto = '$produto', quantidade = '$quantidade', peso = '$peso', dt_entrada = '$dataEntrada', hr_entrada = '$horaEntrada',
+    dt_saida = '$dataSaida', hr_saida = '$horaSaida', origem = '$origem', destino = '$destino', nfe = '$nfe' WHERE id='$id'";
+
+    $result = $conn->query($sqlupdate);
+    }
+    header('Location: index.html');
