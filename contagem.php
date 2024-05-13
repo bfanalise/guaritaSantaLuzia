@@ -46,6 +46,26 @@ $sqli_f = "SELECT count(dt_entrada) FROM cadastro WHERE dt_entrada !='' and dt_s
 $result_f = $conn -> query($sqli_f);
 $userdata_f = mysqli_fetch_assoc($result_f);
 $dentro_f = $userdata_f['count(dt_entrada)'];
+
+
+#FIBRILHA AGUARDANDO------------------------------------------------------------------------------------#
+$sqli_d = "SELECT count(dt_entrada) FROM cadastro WHERE dt_entrada !='' and dt_saida = '' and produto = 'FIBRILHA'";
+$result_d = $conn -> query($sqli_d);
+$userdata_d = mysqli_fetch_assoc($result_d);
+$dentro_d = $userdata_d['count(dt_entrada)'];
+#FIBRILHA CARREGANDO------------------------------------------------------------------------------------#
+$sqli_e = "SELECT count(dt_entrada) FROM cadastro WHERE dt_entrada !='' and dt_saida = '' and produto = 'FIBRILHA'";
+$result_e = $conn -> query($sqli_e);
+$userdata_e = mysqli_fetch_assoc($result_e);
+$dentro_e = $userdata_e['count(dt_entrada)'];
+#TOTAL DE ROLINHOS------------------------------------------------------------------------------------#
+$sqli_f = "SELECT sum(quantidade) FROM cadastro WHERE dt_entrada = CURRENT_DATE /*and dt_saida = '' and*/ and produto like '%ROLINHO%'";
+$result_f = $conn -> query($sqli_f);
+$userdata_f = mysqli_fetch_assoc($result_f);
+$total_f = $userdata_f['sum(quantidade)'];
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -80,7 +100,8 @@ $dentro_f = $userdata_f['count(dt_entrada)'];
             margin-top: 0px;
         }
         article{
-            margin-top: 20px;
+            height: 100%;
+            margin-top: 40px;
             border: none;
         }
         th{
@@ -89,11 +110,14 @@ $dentro_f = $userdata_f['count(dt_entrada)'];
         a{
             color: #009970;
         }
+        h1{
+            font-size: 13pt;
+        }
     </style>
 </head>
 <body>
     <div id="global">
-        <header>CONTROLE DE GUARITA - SANTA LUZIA</header>
+        <header style="height: 30px">CONTROLE DE GUARITA - SANTA LUZIA</header>
         <div class="total">
         <article>
             <table>
@@ -119,7 +143,19 @@ $dentro_f = $userdata_f['count(dt_entrada)'];
                 <tr>
             <?php echo "<td><p>CAROÇO CARREGANDO:</p> <br>" ."<div class='valores'>". $dentro_d ." em processo"."</div>"."</td>" ?>
             <?php echo "<td><p>PLUMA CARREGANDO:</p> <br>" ."<div class='valores'>". $dentro_e ." em processo"."</div>"."</td>" ?>
-            <?php echo "<td><p>BRIQUETE CARREGANDO:</p> <br>" ."<div class='valores'>". $dentro_f ." em processo"."</div>"."</td>" ?>  
+            <?php echo "<td><p>BRIQUETE CARREGANDO:</p> <br>" ."<div class='valores'>". $dentro_f ." rolinhos"."</div>"."</td>" ?>  
+                </tr>
+            </table>
+            <br><br>
+            <hr>
+            <table>
+            <br>
+            <table>
+            <h1>FIBRILHA / ROLINHOS TOTAIS</h1>
+                <tr>
+            <?php echo "<td><p>FIBRILHA CARREGANDO:</p> <br>" ."<div class='valores'>". $dentro_d ." em processo"."</div>"."</td>" ?>
+            <?php echo "<td><p>FIBRILHA AGUARDANDO:</p> <br>" ."<div class='valores'>". $dentro_e ." em processo"."</div>"."</td>" ?>
+            <?php echo "<td><p>ROLINHOS TOTAIS:</p> <br>" ."<div class='valores'>". $total_f ." em processo"."</div>"."</td>" ?>  
                 </tr>
             </table>
             <br><br>
