@@ -49,20 +49,20 @@ $dentro_f = $userdata_f['count(dt_entrada)'];
 
 
 #FIBRILHA AGUARDANDO------------------------------------------------------------------------------------#
-$sqli_d = "SELECT count(dt_entrada) FROM cadastro WHERE dt_entrada !='' and dt_saida = '' and produto = 'FIBRILHA'";
-$result_d = $conn -> query($sqli_d);
-$userdata_d = mysqli_fetch_assoc($result_d);
-$dentro_d = $userdata_d['count(dt_entrada)'];
+$sqli_fib = "SELECT count(dt_entrada) FROM cadastro WHERE dt_entrada !='' and dt_saida = '' and produto = 'FIBRILHA'";
+$result_fib = $conn -> query($sqli_fib);
+$userdata_fib = mysqli_fetch_assoc($result_fib);
+$dentro_fib = $userdata_fib['count(dt_entrada)'];
 #FIBRILHA CARREGANDO------------------------------------------------------------------------------------#
-$sqli_e = "SELECT count(dt_entrada) FROM cadastro WHERE dt_entrada !='' and dt_saida = '' and produto = 'FIBRILHA'";
-$result_e = $conn -> query($sqli_e);
-$userdata_e = mysqli_fetch_assoc($result_e);
-$dentro_e = $userdata_e['count(dt_entrada)'];
+$sqli_fibcar = "SELECT count(dt_entrada) FROM cadastro WHERE dt_entrada !='' and dt_saida = '' and produto = 'FIBRILHA'";
+$result_fibcar = $conn -> query($sqli_fibcar);
+$userdata_fibcar = mysqli_fetch_assoc($result_fibcar);
+$dentro_fibcar = $userdata_fibcar['count(dt_entrada)'];
 #TOTAL DE ROLINHOS------------------------------------------------------------------------------------#
-$sqli_f = "SELECT sum(quantidade) FROM cadastro WHERE dt_entrada = CURRENT_DATE /*and dt_saida = '' and*/ and produto like '%ROLINHO%'";
-$result_f = $conn -> query($sqli_f);
-$userdata_f = mysqli_fetch_assoc($result_f);
-$total_f = $userdata_f['sum(quantidade)'];
+$sqli_rolinhos = "SELECT sum(quantidade) FROM cadastro WHERE dt_entrada = CURRENT_DATE /*and dt_saida = '' and*/ and produto like '%ROLINHO%'";
+$result_rolinhos = $conn -> query($sqli_rolinhos);
+$userdata_rolinhos = mysqli_fetch_assoc($result_rolinhos);
+$total_rolinhos = $userdata_rolinhos['sum(quantidade)'];
 
 
 
