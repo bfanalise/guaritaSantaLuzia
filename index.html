@@ -5,118 +5,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONTROLE DE GUARITA</title>
     <link rel="stylesheet" type="text/css" href="sheet.css">
+    <link rel="stylesheet" type="text/css" href="fluig.css"> <!-- Adicionando o CSS do Fluig -->
     <style>
+        body {
+            background-color: #f9f9f9;
+            padding: 20px;
+            padding-top: 0px;
+        }
+        .container {
+            max-width: 1200px; /* Definindo a largura máxima para a página */
+            margin: 0 auto; /* Centralizando a página na tela */
+            overflow-x: auto; /* Permitindo rolagem horizontal */
+            overflow-y: hidden; /* Escondendo rolagem vertical */
+        }
+        header {
+            font-size: 10pt;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin-bottom: 20px;
+            height: 30px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         .btn_pad{
-            background-color: #009970;
+            background-color: #30b27f;
             width: 150px;
             border-radius: 5px;
             text-align: center;
             color: #FFFFFF;
             text-decoration: none;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn_pad:hover {
+            background-color: #218e66;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="time"] {
+            width: calc(100% - 22px); /* Definindo a largura dos campos com um espaçamento para borda */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table th, table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        .button-container {
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div id="global">
-        <header>CONTROLE DE GUARITA - SANTA LUZIA</header>
-        <div class="total">
-        <article>
-            <form method="POST" action="enviar.php">
-                <table class="tabela01">
-                    <tr>
-                        <th><label>DATA CHEGADA:</label></th>
-                        <th><label>HORA CHEGADA:</label></th>
-                        <th><label>TURNO:</label></th>
-                    </tr>
-                    <tr>
-                        <td><input type="date" name="dataCheg"></td>
-                        <td><input type="time" name="hora"></td>
-                        <td><input type="text" name="turno" placeholder="DIA/NOITE"></td>
-                    </tr>
-                </table>
-                <br>
-                <hr>
-                <br>
-                <table class="tabela02">
-                    <tr>
-                        <th><label>PLACA DO VEÍCULO:</label></th>
-                        <th><label>MOTORISTA:</label></th>
-                        <th><label>EIXO/VEÍCULO:</label></th>
-                        <th><label>TRANSPORTADORA:</label></th>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="placa" placeholder="Placa veículo" required></td>
-                        <td><input type="text" name="motorista" placeholder="Motorista"></td>
-                        <td><input type="text" name="eixo" placeholder="Eixos/Veículo"></td>
-                        <td><input type="text" name="transportadora" placeholder="Transportadora"></td>
-                    </tr>
-                </table>
-                <br>
-                <hr>
-                <br>
-                <table class="tabela03">
-                    <tr>
-                        <th><label>PRODUTO:</label></th>
-                        <th><label>QUANTIDADE:</label></th>
-                        <th><label>PESO:</label></th>
-                        <th><label>CARGA:</label></th>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="produto" placeholder="Produto"></td>
-                        <td><input type="number" name="quantidade" placeholder="Quantidade"></td>
-                        <td><input type="text" name="peso" placeholder="Peso"></td>
-                        <td><input type="number" name="carga" placeholder="carga"></td>
-                    </tr>
-                </table>
-                <br>
-                <hr>
-                <br>
-                <table class="tabela04">
-                    <tr>
-                        <th><label>DATA ENTRADA:</label></th>
-                        <th><label>HORA ENTRADA:</label></th>
-                        <th><label>DATA SAÍDA:</label></th>
-                        <th><label>HORA SAÍDA:</label></th>
-                    </tr>
-                    <tr>
-                        <td><input type="date" name="data_entrada" placeholder="data Entrada"></td>
-                        <td><input type="time" name="hora_entrada" placeholder="hora Entrada"></td>
-                        <td><input type="date" name="data_saida" placeholder="data Saida"></td>
-                        <td><input type="time" name="hora_saida" placeholder="hora Saida"></td>
-                    </tr>
-                </table>
-                <br>
-                <hr>
-                <br>
-                <table class="tabela03">
-                    <tr>
-                        <th><label>ORIGEM:</label></th>
-                        <th><label>DESTINO:</label></th>
-                        <th><label>Nfe:</label></th>
-                        <th><label>Observação:</label></th>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="origem" placeholder="Origem"></td>
-                        <td><input type="text" name="destino" placeholder="Destino"></td>
-                        <td><input type="text" name="nfe" placeholder="Nota Fiscal"></td>
-                        <td><input type="text" name="observacao" placeholder="Observações"></td></td>
-                    </tr>
-                </table>
-                <br>
-                <table>
-                    <td>
-                    <input type="submit" value="CADASTRAR PLACA" name="cadastrar">
-                    </td>
-                    <td class="botao_rel">
-                        <a href="pag_rel.php" class="relatorio">RELATÓRIOS...</a>  
-                    </td>
-
-
-			        <td class="btn_pad"><a href="contagem.php" class="botao_rel" style="color: #FFF;">ORDENS</a></td>
-                </table>
-            </form>
-        </article>
-    </div>
+    <header>
+        <h1>CONTROLE DE GUARITA - SANTA LUZIA</h1>
+    </header>
+    <div class="container">
+        <form method="POST" action="enviar.php">
+            <table class="tabela01">
+                <tr>
+                    <th><label for="dataCheg">DATA CHEGADA:</label></th>
+                    <th><label for="hora">HORA CHEGADA:</label></th>
+                    <th><label for="turno">TURNO:</label></th>
+                </tr>
+                <tr>
+                    <td><input type="date" id="dataCheg" name="dataCheg"></td>
+                    <td><input type="time" id="hora" name="hora"></td>
+                    <td><input type="text" id="turno" name="turno" placeholder="DIA/NOITE"></td>
+                </tr>
+            </table>
+            <hr>
+            <table class="tabela02">
+                <tr>
+                    <th><label for="placa">PLACA DO VEÍCULO:</label></th>
+                    <th><label for="motorista">MOTORISTA:</label></th>
+                    <th><label for="eixo">EIXO/VEÍCULO:</label></th>
+                    <th><label for="transportadora">TRANSPORTADORA:</label></th>
+                </tr>
+                <tr>
+                    <td><input type="text" id="placa" name="placa" placeholder="Placa veículo" required></td>
+                    <td><input type="text" id="motorista" name="motorista" placeholder="Motorista"></td>
+                    <td><input type="text" id="eixo" name="eixo" placeholder="Eixos/Veículo"></td>
+                    <td><input type="text" id="transportadora" name="transportadora" placeholder="Transportadora"></td>
+                </tr>
+            </table>
+            <hr>
+            <table class="tabela03">
+                <tr>
+                    <th><label for="produto">PRODUTO:</label></th>
+                    <th><label for="quantidade">QUANTIDADE:</label></th>
+                    <th><label for="peso">PESO:</label></th>
+                    <th><label for="carga">CARGA:</label></th>
+                </tr>
+                <tr>
+                    <td><input type="text" id="produto" name="produto" placeholder="Produto"></td>
+                    <td><input type="number" id="quantidade" name="quantidade" placeholder="Quantidade"></td>
+                    <td><input type="text" id="peso" name="peso" placeholder="Peso"></td>
+                    <td><input type="number" id="carga" name="carga" placeholder="carga"></td>
+                </tr>
+            </table>
+            <hr>
+            <table class="tabela04">
+                <tr>
+                    <th><label for="data_entrada">DATA ENTRADA:</label></th>
+                    <th><label for="hora_entrada">HORA ENTRADA:</label></th>
+                    <th><label for="data_saida">DATA SAÍDA:</label></th>
+                    <th><label for="hora_saida">HORA SAÍDA:</label></th>
+                </tr>
+                <tr>
+                    <td><input type="date" id="data_entrada" name="data_entrada" placeholder="data Entrada"></td>
+                    <td><input type="time" id="hora_entrada" name="hora_entrada" placeholder="hora Entrada"></td>
+                    <td><input type="date" id="data_saida" name="data_saida" placeholder="data Saida"></td>
+                    <td><input type="time" id="hora_saida" name="hora_saida" placeholder="hora Saida"></td>
+                </tr>
+            </table>
+            <hr>
+            <table class="tabela05">
+                <tr>
+                    <th><label for="origem">ORIGEM:</label></th>
+                    <th><label for="destino">DESTINO:</label></th>
+                    <th><label for="nfe">Nfe:</label></th>
+                    <th><label for="observacao">Observação:</label></th>
+                </tr>
+                <tr>
+                    <td><input type="text" id="origem" name="origem" placeholder="Origem"></td>
+                    <td><input type="text" id="destino" name="destino" placeholder="Destino"></td>
+                    <td><input type="text" id="nfe" name="nfe" placeholder="Nota Fiscal"></td>
+                    <td><input type="text" id="observacao" name="observacao" placeholder="Observações"></td>
+                </tr>
+            </table>
+            <div class="button-container">
+                <input type="submit" value="CADASTRAR" name="cadastrar" class="btn_pad">
+                <a href="pag_rel.php" class="btn_pad">RELATÓRIOS...</a>
+                <a href="contagem.php" class="btn_pad">ORDENS</a>
+            </div>
+        </form>
     </div>
 </body>
 </html>
