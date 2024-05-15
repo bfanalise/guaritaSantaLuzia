@@ -23,6 +23,7 @@ if(isset($_POST['cadastrar'])){
     $observacao = $_POST['observacao'];
 }
 
+
 if(!$conn){
     die("Conexão falhou" . mysqli_connect_error());
 }

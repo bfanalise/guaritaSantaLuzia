@@ -49,7 +49,7 @@ $dentro_f = $userdata_f['count(dt_entrada)'];
 
 
 #FIBRILHA AGUARDANDO------------------------------------------------------------------------------------#
-$sqli_d = "SELECT count(dt_entrada) FROM cadastro WHERE dt_entrada !='' and dt_saida = '' and produto = 'FIBRILHA'";
+$sqli_d = "SELECT count(dt_entrada) FROM cadastro WHERE dt_entrada ='' and dt_saida = '' and produto = 'FIBRILHA'";
 $result_d = $conn -> query($sqli_d);
 $userdata_d = mysqli_fetch_assoc($result_d);
 $dentro_d = $userdata_d['count(dt_entrada)'];
@@ -59,6 +59,10 @@ $result_e = $conn -> query($sqli_e);
 $userdata_e = mysqli_fetch_assoc($result_e);
 $dentro_e = $userdata_e['count(dt_entrada)'];
 #TOTAL DE ROLINHOS------------------------------------------------------------------------------------#
+$dataAtual = date('Y-m-d');
+$dataConvertida = strtotime($dataAtual);
+
+
 $sqli_f = "SELECT sum(quantidade) FROM cadastro WHERE dt_entrada = CURRENT_DATE /*and dt_saida = '' and*/ and produto like '%ROLINHO%'";
 $result_f = $conn -> query($sqli_f);
 $userdata_f = mysqli_fetch_assoc($result_f);
@@ -143,7 +147,7 @@ $total_f = $userdata_f['sum(quantidade)'];
                 <tr>
             <?php echo "<td><p>CAROÇO CARREGANDO:</p> <br>" ."<div class='valores'>". $dentro_d ." em processo"."</div>"."</td>" ?>
             <?php echo "<td><p>PLUMA CARREGANDO:</p> <br>" ."<div class='valores'>". $dentro_e ." em processo"."</div>"."</td>" ?>
-            <?php echo "<td><p>BRIQUETE CARREGANDO:</p> <br>" ."<div class='valores'>". $dentro_f ." rolinhos"."</div>"."</td>" ?>  
+            <?php echo "<td><p>BRIQUETE CARREGANDO:</p> <br>" ."<div class='valores'>". $dentro_f ." em processo"."</div>"."</td>" ?>  
                 </tr>
             </table>
             <br><br>
@@ -154,7 +158,7 @@ $total_f = $userdata_f['sum(quantidade)'];
             <h1>FIBRILHA / ROLINHOS TOTAIS</h1>
                 <tr>
             <?php echo "<td><p>FIBRILHA CARREGANDO:</p> <br>" ."<div class='valores'>". $dentro_d ." em processo"."</div>"."</td>" ?>
-            <?php echo "<td><p>FIBRILHA AGUARDANDO:</p> <br>" ."<div class='valores'>". $dentro_e ." em processo"."</div>"."</td>" ?>
+            <?php echo "<td><p>FIBRILHA CARREGANDO:</p> <br>" ."<div class='valores'>". $dentro_e ." em processo"."</div>"."</td>" ?>
             <?php echo "<td><p>ROLINHOS TOTAIS:</p> <br>" ."<div class='valores'>". $total_f ." Rolinhos"."</div>"."</td>" ?>  
                 </tr>
             </table>
