@@ -193,7 +193,7 @@ $total_rolinhos = $userdata_rolinhos['sum(quantidade)'];
                 <tr>
                     <td><div class='valores'><?php echo $dentro_d; ?> em processo</div></td>
                     <td><div class='valores'><?php echo $dentro_e; ?> em processo</div></td>
-                    <td><p>BRIQUETE CARREGANDO:</p><div class='valores'><?php echo $dentro_f; ?> rolinhos</div></td>
+                    <td><div class='valores'><?php echo $dentro_f; ?> rolinhos</div></td>
                 </tr>
             </table>
             
