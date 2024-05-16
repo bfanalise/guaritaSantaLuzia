@@ -1,5 +1,5 @@
 <?php
-$servidor = '127.0.0.1:3306';
+$servidor = '192.168.41.9:3306';
 $user = 'root';
 $pass = '';
 $banco = 'guaritasl';
