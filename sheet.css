@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html{
     height: 100%;
 }
@@ -62,6 +63,16 @@ header{
     height: 50px;
     background-color: #009970;
     color: #FFF;
+=======
+*{
+    margin: 0px;
+}
+/* Estilo Fluig */
+header {
+    background-color: #31b280;
+    color: #fff;
+    padding: 10px;
+>>>>>>> dd141a24de7a7287a056df2a49f31c54042a593b
     text-align: center;
     background-image: url('logobranco.png');
     background-size: 95px;
@@ -384,6 +395,7 @@ a.botao_rel{
 a.botao_rel:hover{
     text-decoration: none;
 }
+<<<<<<< HEAD
 a.relatorio_secundario{
     color: #FFFFFF;
     font-size: 10px;
@@ -408,3 +420,11 @@ td.botao_rel-2{
         font-size: 10pt;
         color: #cfcfcf;
     }
+=======
+h1{
+    font-size: 10pt;
+}
+th{
+    font-size: 8pt;
+}
+>>>>>>> dd141a24de7a7287a056df2a49f31c54042a593b

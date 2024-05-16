@@ -1,0 +1,88 @@
+/* Adicionando estilos para manter apenas o thead da tabela fixo */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #495057;
+}
+
+header {
+    background-color: #009970;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    z-index: 999;
+}
+
+article {
+    margin-top: 70px;
+    padding: 5px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    background-color: #fff;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+    border: 1px solid #dee2e6;
+    white-space: nowrap;
+    text-align: center;
+}
+
+th {
+    background-color: #343a40;
+    color: #fff;
+}
+
+thead {
+    position: sticky;
+    top: 50px;
+    z-index: 999;
+}
+
+tbody {
+    display: block;
+    height: 300px; /* Defina a altura conforme necessário */
+    overflow-y: auto;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilo para o campo de pesquisa */
+input[type="search"] {
+    height: 30px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+input[type="search"]::placeholder {
+    color: #6c757d;
+}
+
+/* Estilo para os botões */
+.botao_rel {
+    display: inline-block;
+    background-color: #28a745;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.botao_rel:hover {
+    background-color: #218838;
+}
